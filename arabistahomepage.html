@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>عربستا</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+/*homepage style*/
+
+@import url('link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"');
+
+*
+{
+    box-sizing: border-box;
+    transition: all ease-in-out 250ms;
+}
+
+body
+{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;;
+    text-align: center;
+}
+
+img
+{
+    max-width: 100%
+    height: auto;
+}
+
+.container
+{
+    width: 95%;
+    max-width: 50em;
+    margin: 0 auto;
+}
+
+.clearfix::after,
+section::after,
+footer::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*Column system*/
+
+[class^=col-] {
+    width: 100%;
+    margin-top: 1em;
+}
+
+[class^=col-]:first-child {
+    margin-top: 0;
+}
+
+.col-1 {
+    width: 33.333334%;
+    float: left;
+}
+
+
+@media (min-width: 40rem) {
+
+    [class^=col-] {
+        float: left;
+        padding: 0 .5em;
+        margin-top: 0;
+    }
+
+    [class^=col-]:first-child {
+        padding-left: 0;
+    }
+
+    [class^=col-]:last-child {
+        padding-right: 0;
+    }
+
+    .col-3 {
+        width: 50%;
+    }
+
+    .col-1 {
+        width: 16.6666%;
+    }
+}
+
+/*typography*/
+h1
+{
+    font-weight: 300;
+    font-size: 1.7rem;
+    margin-top: 0;
+
+}
+
+p
+{
+    margin-top: 0;
+    line-height: 2.75;
+}
+
+p:last-of-type{
+    margin-bottom: 0;
+}
+
+.title
+{
+    font-size: 2.5rem;
+    margin-bottom:1.5em;
+    font-weight: 900;
+    margin-top: 1em;
+}
+
+.title span
+{
+    font-weight: 300;
+    display: block;
+    font-size: .9em;
+}
+
+.title-cta {
+    margin: 0 0 .5em;
+}
+
+.unstyled-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@media (min-width:60rem) {
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .title {
+        font-size: 3.7rem;
+    }
+}
+
+
+/*buttons*/
+.button
+{
+    display: inline-block;
+    font-size: 1.15rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: .5em 1.75em;
+}
+
+@media (min-width: 60rem){
+    .button{
+        font-size:1.5rem; 
+    }
+}
+
+.button-small 
+{
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.button-accent
+{
+    color: #fff;
+    border-color: #fff;
+}
+
+.button-accent:hover,
+.button-accent:focus{
+    background: #00ff6c;
+    color: #232323;
+}
+
+.button-dark {
+    color: #232323;
+    border-color: #232323;
+}
+
+.button-dark:hover,
+.button-dark:focus {
+    background: #232323;
+    color: #00ff6c;
+}
+
+/* Parallax*/
+
+/*.parallax--bg,
+.parallax--box {
+    transition: initial;
+}
+
+/* header */
+header
+{
+    position: absolute; 
+    left: 0;
+    right: 0;
+    margin: 1em;
+}
+
+nav ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li
+{
+    display: inline-block;
+    margin: 1em;
+}
+
+nav a
+{
+    font-weight: 900;
+    text-decoration: none;
+    padding: .5em;
+    text-transform: upprcase;
+    color: #FFF;
+    font-size: .8rem;
+}
+
+nav a:hover,
+nav a:focus{
+    color: #ddd;
+}
+
+@media(min-width:60rem)
+{
+    .logo{
+        float: left;
+    }
+
+    nav{
+        float: right;
+    }
+}
+
+/* home-hero */
+.home-hero
+{
+    background-image: url(https://i.postimg.cc/rpYRTfjP/Background1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 14em 0; 
+    color: #FFF;
+}
+
+@media (min-width: 60rem){
+    .home-hero{
+        height: 100vh;
+        padding-top: 35vh;
+    }
+}
+
+/*home-about*/
+.home-about-textbox
+{
+    background-color: #232323;
+    padding: 4em;
+    width: 100vw;
+    margin-left: -2.5%;
+    outline: 2px solid #00ff6c;
+    outline-offset: -2.5em;
+    color: #FFF;
+    position: relative;
+}
+
+.home-about-textbox h1
+{
+    color: #00ff6c;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: .75em;
+    background: #232323;
+    padding: 0 .145em;
+}
+
+@media (min-width: 25rem) 
+{
+    h1{
+        font-size: 2rem;
+    }
+
+    .home-about-textbox{
+        padding: 5.5em;
+    }
+
+    .home-about-textbox h1{
+        top:.6em;
+        padding: 0 .325em; 
+    }
+}
+
+@media (min-width: 60rem) 
+{
+    h1{
+        font-size: 2.5rem;
+    }
+
+    .home-about{
+        background-image: url(https://5zznly.com/d/zkjw6_ec7b97cc-8ef8-4e3b-a052-f4691d0aadcc.jpg);
+        background-repeat: no-repeat;
+        padding-bottom: 10em;
+    }
+
+    .home-about-textbox{
+        width: 50%;
+        padding: 5em;
+        outline-offset: -3.75em;
+        margin-left: -3.5%;/*2*/
+        top: -1.75em;
+        text-align: left;
+        box-shadow: 0 0 4em 0 rbga(0,0,0,.3);
+
+    }
+
+    .home-about-textbox h1{
+        top: .75em; 
+        left: 6rem;
+        transform: translateX(0);
+    }
+}
+
+/* portfolio */
+
+.portfolio {
+    margin: 3em 0 0;
+}
+
+.port-item {
+    margin: 0;
+    position: relative;
+}
+
+.port-item img {
+    display: block;
+}
+
+.port-desc {
+    position: absolute;
+    z-index: 100;
+    bottom: 0em;
+    left: 0em;
+    right: 0em;
+    color: white;
+    background: rgba(0,0,0,.6);
+    padding-bottom: 2em;
+}
+
+.port-desc p {
+    margin: 1em;
+}
+
+@media (min-width: 37rem) {
+    .port-item {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 60rem) {
+    .port-item {
+        width: 33.3333334%;
+        overflow: hidden;
+    }
+
+    .port-desc {
+        transform: translateY(150%);
+    }
+
+    .port-item:hover .port-desc {
+        transform: translateY(0%);
+    }
+}
+
+
+/* CTA */
+
+.cta {
+    background-color: #00ff6c;
+    padding: 4em 0;
+}
+
+
+/* Footer*/
+
+footer {
+    background: #232323;
+    color: #fff;
+    text-align: left;
+    padding: 4em 0;
+}
+
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <header>
+            <img src="https://5zznly.com/d/jNyW3_عربسان_800.png" class="logo" height="150" width="150" />
+            
+           
+            <nav>
+                <ul>
+                    <li><a href="file:///C:/Users/USER/Desktop/ArabistaCode/logina.html">تسجيل الدخول</a></li>
+                    <li><a href="file:///C:/Users/USER/Desktop/ArabistaCode/service.html">خدمة العملاء</a></li>
+                    <li><a href="#">سلة المشتريات</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="home-hero"> <!--parallax--bg"-->
+            <div class="container">
+                <h1 class="title"><!-- parallax--box"-->عربيستا
+                <span>نص</span>
+                </h1>
+                <a href="#product" class="button button-accent">المنتجات</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="home-about">
+                <div id="about">
+                   <div class="home-about-textbox"><!--parallax--box"-->
+                    <h1>من نحن</h1>
+                    <p><strong>عربستا</strong> نص </p> 
+                </div>
+            </section>
+        </div>
+            <br><br><br><br>
+        <div id="product">
+        <section class="portfolio">
+            <h1> المنتجات</h1>
+
+            <!--portfolio items 1-->
+            <figure class="port-item">
+                <img src="https://j.top4top.io/p_1769cyn071.jpg">
+                <figcaption class="port-desc">
+                    <p>القهوة العربية</p>
+                    <a href="file:///C:/Users/USER/Desktop/ArabistaCode/arabic.html" class="button button-accent button-small">المزيد</a>
+                </figcaption>
+            </figure>
+
+            <!--portfolio items 2-->
+            <figure class="port-item">
+                <img src="https://f.top4top.io/p_1769pbo4x5.jpg">
+                <figcaption class="port-desc">
+                    <p>القهوة التركية</p>
+                    <a href="file:///C:/Users/USER/Desktop/ArabistaCode/turkish.html" class="button button-accent button-small">المزيد</a>
+                </figcaption>
+            </figure>
+
+            <!--portfolio items 3-->
+            <figure class="port-item">
+                <img src="https://h.top4top.io/p_1772jt7h41.jpg">
+                <figcaption class="port-desc">
+                    <p>العروض</p>
+                    <a href="" class="button button-accent button-small">المزيد</a>
+                </figcaption>
+            </figure>
+
+            <!--portfolio items 4-->
+            <figure class="port-item">
+                <img src="https://k.top4top.io/p_1769vgeyx1.jpg">
+                <figcaption class="port-desc">
+                    <p>الأكثر مبيعا</p>
+                    <a href="" class="button button-accent button-small">المزيد</a>
+                </figcaption>
+            </figure>
+
+            <!--portfolio items 5-->
+            <figure class="port-item">
+                <img src="https://5zznly.com/d/PFC6Q_كوفي_شوب_2.jpg">
+                <figcaption class="port-desc">
+                    <p>رأي العملاء</p>
+                    <a href="" class="button button-accent button-small">المزيد</a>
+                </figcaption>
+            </figure>
+
+    
+        </section>
+
+        <footer>
+
+            <div class="container">
+                <div class="col-3">
+                    <p>اماكن تواجد منتجاتنا</p>
+                   <li><strong>جدة</strong></li>
+                    <li><strong>الرياض</strong></li>
+                    <li><strong>المدينة المنورة</strong></li>
+                </div>
+
+            <div class="col-1">
+                <ul class="unstyle-list">
+                    <li><strong>حساباتنا</strong></li>
+                    <li><a href="#login">Instagram</a></li>
+                    <li><a href="#login">Snapchat</a></li>
+                    <li><a href="#login">Twitter</a></li>
+                </ul>
+            </div>
+            
+
+            <div class="col-1">
+                <ul class="unstyle-list">
+                    <li><strong>ُالايميل</strong></li>
+                    <li><a href="https://mail.google.com/mail/u/0/#search/arabistaksa%40gmail.com">arabistaksa@gmail.com</a></li>
+                     <li><strong>رقم التواصل</strong></li>
+                    <li><a>0505591222</a></li>
+               
+                </ul>
+            </div>
+            <br><br><br><br>
+
+        </div>
+             <br> <br>
+              <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <h4 class="copyright-text">Copyright &copy; 2020 جميع الحقوق محفوظة لدى 
+         <a>عربستا</a>.
+            </h4>
+              <h4>الوكيل الحصري: الرحاب للمواد الغذائية</h4>
+          </div>
+        </footer>
+
+        <!--script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script> 
+        <script src="js/parallax.js"></script-->
+        <!-- I WILL TRY TO USE THIS IN NEXT UPDATE-->
+
+
+
+    </body>
+</html>>
